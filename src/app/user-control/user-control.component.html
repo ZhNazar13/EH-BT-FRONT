@@ -1,0 +1,59 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h3 class="card-title">Пользователи</h3>
+                <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table mat-table [dataSource]="dataSource" class="table">
+
+                        <!--- Note that these columns can be defined in any order.
+                              The actual rendered columns are set as a property on the row definition" -->
+
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> id. </th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
+
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="login">
+                            <th mat-header-cell *matHeaderCellDef> login </th>
+                            <td mat-cell *matCellDef="let element"> {{element.login}} </td>
+                        </ng-container>
+
+                        <!-- Weight Column -->
+                        <ng-container matColumnDef="arcfl">
+                            <th mat-header-cell *matHeaderCellDef> arcfl </th>
+                            <td mat-cell *matCellDef="let element"> {{element.arcfl}} </td>
+                        </ng-container>
+
+                        <!-- Symbol Column -->
+                        <ng-container matColumnDef="role_id">
+                            <th mat-header-cell *matHeaderCellDef> role </th>
+                            <td mat-cell *matCellDef="let element"> {{element.role.name}} </td>
+                        </ng-container>
+
+                        <!-- Actions Column -->
+                        <ng-container matColumnDef="actions">
+                            <th mat-header-cell *matHeaderCellDef> Actions </th>
+                            <td mat-cell *matCellDef="let element">
+                                <button mat-icon-button aria-label="Example icon button with a delete icon">
+                                    <a class="material-icons">delete</a>
+                                </button>
+                                <button mat-icon-button aria-label="Example icon button with a delete icon">
+                                    <a class="material-icons">edit</a>
+                                </button>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
