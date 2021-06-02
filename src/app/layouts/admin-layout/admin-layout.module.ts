@@ -19,6 +19,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
+import {CatalogSubjectControlComponent} from '../../catalog-subject-control/catalog-subject-control.component';
+import {SubjectControlDialogComponent} from '../../catalog-subject-control/subject-control-dialog/subject-control-dialog.component';
 
 @NgModule({
     imports: [
@@ -44,6 +46,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MapsComponent,
         NotificationsComponent,
         UpgradeComponent,
+        CatalogSubjectControlComponent,
+        SubjectControlDialogComponent
     ]
 })
 

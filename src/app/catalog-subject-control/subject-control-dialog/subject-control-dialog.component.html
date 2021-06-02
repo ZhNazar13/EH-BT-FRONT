@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header card-header-danger">
+        <h3 class="card-title">{{title}}</h3>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+        <mat-form-field class="example-full-width">
+            <mat-label>Ид</mat-label>
+            <input matInput type="text" [(ngModel)]="data.model.id" disabled>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" [(ngModel)]="data.model.name">
+        </mat-form-field>
+    </div>
+    <div class="card-footer">
+        <button mat-mat-raised-button (click)="subjectAction()" class="btn btn-primary" [mat-dialog-close]="true"
+                cdkFocusInitial>Сохранить
+        </button>
+        <button mat-mat-raised-button class="btn btn-danger pull-right" mat-dialog-close>Отмена</button>
+    </div>
+</div>

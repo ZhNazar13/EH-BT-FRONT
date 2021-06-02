@@ -2,5 +2,7 @@ export class UserModel {
     id: number;
     login: string;
     arcfl: number;
-    role_id: any;
+    roleId: number;
+    role: any;
+    password: string;
 }

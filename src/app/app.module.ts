@@ -29,6 +29,12 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { UserControlComponent } from './user-control/user-control.component';
 import {DialogContentExampleDialogComponent} from './dialog-content-example-dialog/dialog-content-example-dialog.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { CatalogSubjectControlComponent } from './catalog-subject-control/catalog-subject-control.component';
+import { SubjectControlDialogComponent } from './catalog-subject-control/subject-control-dialog/subject-control-dialog.component';
 
 @NgModule({
     imports: [
@@ -43,7 +49,11 @@ import {MatButtonModule} from '@angular/material/button';
             apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
         }),
         MatTableModule,
-        MatButtonModule
+        MatButtonModule,
+        MatDialogModule,
+        MatTooltipModule,
+        MatFormFieldModule,
+        MatInputModule
     ],
   declarations: [
     AppComponent,
@@ -52,7 +62,8 @@ import {MatButtonModule} from '@angular/material/button';
     StaffControlComponent,
     ScheduleComponent,
     UserControlComponent,
-    DialogContentExampleDialogComponent
+    DialogContentExampleDialogComponent,
+
 
   ],
   providers: [],
