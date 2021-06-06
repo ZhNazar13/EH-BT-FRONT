@@ -24,6 +24,7 @@ import {SubjectControlDialogComponent} from '../../catalog-subject-control/subje
 import {UserControlComponent} from '../../user-control/user-control.component';
 import {UserControlDialogComponent} from '../../user-control/user-control-dialog/user-control-dialog.component';
 import {StaffControlComponent} from '../../staff-control/staff-control.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
     imports: [
@@ -38,7 +39,8 @@ import {StaffControlComponent} from '../../staff-control/staff-control.component
         MatSelectModule,
         MatTooltipModule,
         MatTableModule,
-        MatDialogModule
+        MatDialogModule,
+        MatPaginatorModule
     ],
     declarations: [
         DashboardComponent,

@@ -1,8 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from '../service/user.service';
-import {UserModel} from '../model/user.model';
 import {MatDialog} from '@angular/material/dialog';
 import {UserControlDialogComponent} from './user-control-dialog/user-control-dialog.component';
+import {PageEvent} from '@angular/material/paginator';
 
 @Component({
     selector: 'app-user',
@@ -12,28 +12,38 @@ import {UserControlDialogComponent} from './user-control-dialog/user-control-dia
 export class UserControlComponent implements OnInit {
     displayedColumns: string[] = ['id', 'login', 'arcfl', 'role_id', 'actions'];
     dataSource = [];
-    private userDto: any;
-    private userModel: UserModel;
+    pageableResponse: any;
+    page = 0;
+    size = 5;
+    length: 0;
+    pageEvent: any;
 
     constructor(private userService: UserService,
                 public dialog: MatDialog) {
     }
 
     ngOnInit(): void {
-        this.getAllUser();
+        this.getAllUsersByPage();
     }
 
-    getAllUser(): void {
-        this.userService.getAllUser().subscribe(res => {
-            console.log(res);
-            this.dataSource = res;
+    getAllUsersByPage(): void {
+        this.userService.getAllUsersByPage(this.page, this.size).subscribe(res => {
+            this.pageableResponse = res;
+            this.dataSource = res.content;
+            this.length = res.totalElements;
         })
+    }
+
+    public getServerData(event?: PageEvent) {
+        this.page = event.pageIndex;
+        this.size = event.pageSize;
+        this.getAllUsersByPage();
     }
 
     deleteUser(id): void {
         this.userService.deleteUserById(id).subscribe(res2 => {
             console.log(res2);
-            this.getAllUser();
+            this.getAllUsersByPage();
         })
     }
 
@@ -48,7 +58,7 @@ export class UserControlComponent implements OnInit {
 
         dialogRef.afterClosed().subscribe(result => {
             console.log(`Dialog result: ${result}`);
-            this.getAllUser();
+            this.getAllUsersByPage();
         });
     }
 }
