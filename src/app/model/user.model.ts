@@ -5,4 +5,6 @@ export class UserModel {
     roleId: number;
     role: any;
     password: string;
+    constructor() {
+    }
 }

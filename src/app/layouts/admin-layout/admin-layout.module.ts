@@ -21,6 +21,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import {CatalogSubjectControlComponent} from '../../catalog-subject-control/catalog-subject-control.component';
 import {SubjectControlDialogComponent} from '../../catalog-subject-control/subject-control-dialog/subject-control-dialog.component';
+import {UserControlComponent} from '../../user-control/user-control.component';
+import {UserControlDialogComponent} from '../../user-control/user-control-dialog/user-control-dialog.component';
+import {StaffControlComponent} from '../../staff-control/staff-control.component';
 
 @NgModule({
     imports: [
@@ -46,8 +49,11 @@ import {SubjectControlDialogComponent} from '../../catalog-subject-control/subje
         MapsComponent,
         NotificationsComponent,
         UpgradeComponent,
+        UserControlComponent,
+        UserControlDialogComponent,
         CatalogSubjectControlComponent,
-        SubjectControlDialogComponent
+        SubjectControlDialogComponent,
+        StaffControlComponent
     ]
 })
 

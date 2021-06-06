@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {UserService} from '../service/user.service';
 import {UserModel} from '../model/user.model';
 import {MatDialog} from '@angular/material/dialog';
-import {DialogContentExampleDialogComponent} from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
+import {UserControlDialogComponent} from './user-control-dialog/user-control-dialog.component';
 
 @Component({
     selector: 'app-user',
@@ -33,18 +33,18 @@ export class UserControlComponent implements OnInit {
     deleteUser(id): void {
         this.userService.deleteUserById(id).subscribe(res2 => {
             console.log(res2);
-            this.dataSource = res2;
+            this.getAllUser();
         })
     }
 
-    openDialog(element, action) {
-        console.log(element);
+    openDialog(model, action) {
+        console.log(model);
         const dialogData = {
-            model: element,
+            model: model,
             action: action
         };
 
-        const dialogRef = this.dialog.open(DialogContentExampleDialogComponent, {data: dialogData, width: '600px'});
+        const dialogRef = this.dialog.open(UserControlDialogComponent, {data: dialogData, width: '600px'});
 
         dialogRef.afterClosed().subscribe(result => {
             console.log(`Dialog result: ${result}`);

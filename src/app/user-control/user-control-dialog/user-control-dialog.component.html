@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-header card-header-danger">
+        <h4 class="card-title">{{title}}</h4>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+        <mat-form-field>
+            <mat-label>id</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.id" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>login</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.login" [disabled]="data.action === 'edit'">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>arcfl</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.arcfl">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>password</mat-label>
+            <input matInput type="text" [(ngModel)]="data.content.password">
+        </mat-form-field>
+
+        <!--        Выбор справочника ролей -->
+        <mat-form-field>
+            <mat-label>role</mat-label>
+            <mat-select [(ngModel)]="data.content.roleId">
+                <mat-option *ngFor="let role of roleList"
+                            [value]=" role.id">
+                    {{ role.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="card-footer">
+        <button mat-mat-raised-button (click)="saveUser()" class="btn btn-danger pull-right"
+                [mat-dialog-close]="true">Сохранить
+        </button>
+        <button mat-mat-raised-button class="btn btn-danger pull-right" mat-dialog-close>Отмена</button>
+    </div>
+</div>

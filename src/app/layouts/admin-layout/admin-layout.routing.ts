@@ -10,7 +10,6 @@ import {NotificationsComponent} from '../../notifications/notifications.componen
 import {UpgradeComponent} from '../../upgrade/upgrade.component';
 import {TestComponent} from '../../test/test.component';
 import {StaffControlComponent} from '../../staff-control/staff-control.component';
-import {ScheduleComponent} from '../../schedule/schedule.component';
 import {UserControlComponent} from '../../user-control/user-control.component';
 import {CatalogSubjectControlComponent} from '../../catalog-subject-control/catalog-subject-control.component';
 
@@ -68,6 +67,5 @@ export const AdminLayoutRoutes: Routes = [
     {path: 'test', component: TestComponent},
     {path: 'user', component: UserControlComponent},
     {path: 'staffs', component: StaffControlComponent},
-    {path: 'schedule', component: ScheduleComponent},
-    {path: 'catalog-subject', component: CatalogSubjectControlComponent},
+    {path: 'catalog-subject', component: CatalogSubjectControlComponent}
 ];

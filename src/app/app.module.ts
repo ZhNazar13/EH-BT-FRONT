@@ -23,18 +23,12 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { TestComponent } from './test/test.component';
-import { StaffControlComponent } from './staff-control/staff-control.component';
 import {MatTableModule} from '@angular/material/table';
-import { ScheduleComponent } from './schedule/schedule.component';
-import { UserControlComponent } from './user-control/user-control.component';
-import {DialogContentExampleDialogComponent} from './dialog-content-example-dialog/dialog-content-example-dialog.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { CatalogSubjectControlComponent } from './catalog-subject-control/catalog-subject-control.component';
-import { SubjectControlDialogComponent } from './catalog-subject-control/subject-control-dialog/subject-control-dialog.component';
 
 @NgModule({
     imports: [
@@ -58,13 +52,7 @@ import { SubjectControlDialogComponent } from './catalog-subject-control/subject
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    TestComponent,
-    StaffControlComponent,
-    ScheduleComponent,
-    UserControlComponent,
-    DialogContentExampleDialogComponent,
-
-
+    TestComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
