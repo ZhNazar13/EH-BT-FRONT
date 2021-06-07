@@ -6,7 +6,7 @@ import {RolesModel} from '../model/roles.model';
 @Injectable({
   providedIn: 'root'
 })
-export class RolesService {
+export class RoleService {
   private readonly ROLES_CONTROL = '/api/private/v1/role';
 
   constructor(private http: HttpClient) {

@@ -1,4 +1,4 @@
-export class UserModel {
+export class StaffModel {
     id: number;
     login: number;
     arcfl: number;

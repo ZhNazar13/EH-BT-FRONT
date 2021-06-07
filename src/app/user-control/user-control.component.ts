@@ -47,14 +47,19 @@ export class UserControlComponent implements OnInit {
         })
     }
 
-    openDialog(model, action) {
+    openDialog(model, action: string) {
         console.log(model);
         const dialogData = {
             model: model,
             action: action
         };
 
-        const dialogRef = this.dialog.open(UserControlDialogComponent, {data: dialogData, width: '600px'});
+        const dialogRef = this.dialog.open(UserControlDialogComponent,
+            {
+                data: dialogData,
+                width: '600px'
+            }
+        );
 
         dialogRef.afterClosed().subscribe(result => {
             console.log(`Dialog result: ${result}`);

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {SubjectService} from '../service/subject.service';
-import {SubjectModel} from '../model/subject.model';
 import {MatDialog} from '@angular/material/dialog';
 import {SubjectControlDialogComponent} from './subject-control-dialog/subject-control-dialog.component';
 
@@ -45,7 +44,7 @@ export class CatalogSubjectControlComponent implements OnInit {
         });
     }
 
-    deleteSubject(id) {
+    deleteSubject(id): void {
         this.subjectService.deleteSubjectById(id).subscribe(res => {
             console.log(res);
             this.getAllSubject();

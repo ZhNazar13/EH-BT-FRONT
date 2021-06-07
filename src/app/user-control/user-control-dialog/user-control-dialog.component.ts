@@ -2,7 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {UserModel} from '../../model/user.model';
 import {UserService} from '../../service/user.service';
-import {RolesService} from '../../service/roles.service';
+import {RoleService} from '../../service/role.service';
 
 @Component({
     selector: 'app-user-control-dialog',
@@ -15,19 +15,19 @@ export class UserControlDialogComponent implements OnInit {
     selected;
 
     // list_roles = new RolesModel();
-    title = 'Редактирование профиля';
+    title = 'Добавление профиля';
 
     constructor(@Inject(MAT_DIALOG_DATA) public data: any,
                 private userService: UserService,
-                private roleService: RolesService) {
+                private roleService: RoleService) {
         console.log(data);
         if (data.action === 'add') {
-            this.data.content = new UserModel();
-            this.data.content.id = 0;
-            this.title = 'Добавление профиля';
+            this.data.model = new UserModel();
+            this.data.model.id = 0;
         } else if (data.action === 'edit') {
-            if (data.content.role) {
-                this.selected = data.content.role;
+            if (data.model.role) {
+                this.title = 'Редактирование профиля';
+                this.selected = data.model.role.id;
             }
         }
     }
@@ -39,13 +39,11 @@ export class UserControlDialogComponent implements OnInit {
 
     saveUser() {
         const userRequestModel = new UserModel();
-        userRequestModel.id = this.data.content.id;
-        userRequestModel.login = this.data.content.login;
-        userRequestModel.arcfl = this.data.content.arcfl;
-        userRequestModel.password = this.data.content.password;
-        userRequestModel.roleId = this.data.content.roleId;
-        console.log('this.data.content.role');
-        console.log(this.data.content.role);
+        userRequestModel.id = this.data.model.id;
+        userRequestModel.login = this.data.model.login;
+        userRequestModel.arcfl = this.data.model.arcfl;
+        userRequestModel.password = this.data.model.password;
+        userRequestModel.roleId = this.data.model.roleId;
         this.userService.createUser(userRequestModel).subscribe(res => {
             console.log(res);
         })
@@ -54,8 +52,6 @@ export class UserControlDialogComponent implements OnInit {
     // Выбор справочника ролей
     getRoleList() {
         this.roleService.getAllRoles().subscribe(res => {
-            console.log('role list');
-            console.log(res);
             this.roleList = res;
         });
     }
