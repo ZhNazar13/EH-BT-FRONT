@@ -10,17 +10,7 @@ import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { TableListComponent } from './table-list/table-list.component';
-import { TypographyComponent } from './typography/typography.component';
-import { IconsComponent } from './icons/icons.component';
-import { MapsComponent } from './maps/maps.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component';
-import {
-  AgmCoreModule
-} from '@agm/core';
+import { AgmCoreModule } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { TestComponent } from './test/test.component';
 import {MatTableModule} from '@angular/material/table';
@@ -29,6 +19,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
     imports: [
@@ -47,7 +39,9 @@ import {MatInputModule} from '@angular/material/input';
         MatDialogModule,
         MatTooltipModule,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        MatToolbarModule,
+        MatCardModule
     ],
   declarations: [
     AppComponent,

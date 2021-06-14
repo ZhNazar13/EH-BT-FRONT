@@ -8,7 +8,6 @@ import {UserProfileComponent} from '../../user-profile/user-profile.component';
 import {TableListComponent} from '../../table-list/table-list.component';
 import {TypographyComponent} from '../../typography/typography.component';
 import {IconsComponent} from '../../icons/icons.component';
-import {MapsComponent} from '../../maps/maps.component';
 import {NotificationsComponent} from '../../notifications/notifications.component';
 import {UpgradeComponent} from '../../upgrade/upgrade.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -25,6 +24,10 @@ import {UserControlComponent} from '../../user-control/user-control.component';
 import {UserControlDialogComponent} from '../../user-control/user-control-dialog/user-control-dialog.component';
 import {StaffControlComponent} from '../../staff-control/staff-control.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {TeacherSchedulerComponent} from '../../schedule-control/teacher-scheduler.component';
+import {LessonItemComponent} from '../../schedule-control/lesson-item/lesson-item.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
     imports: [
@@ -40,7 +43,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
         MatTooltipModule,
         MatTableModule,
         MatDialogModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatCardModule,
+        MatToolbarModule
     ],
     declarations: [
         DashboardComponent,
@@ -48,14 +53,15 @@ import {MatPaginatorModule} from '@angular/material/paginator';
         TableListComponent,
         TypographyComponent,
         IconsComponent,
-        MapsComponent,
         NotificationsComponent,
         UpgradeComponent,
         UserControlComponent,
         UserControlDialogComponent,
         CatalogSubjectControlComponent,
         SubjectControlDialogComponent,
-        StaffControlComponent
+        StaffControlComponent,
+        TeacherSchedulerComponent,
+        LessonItemComponent
     ]
 })
 

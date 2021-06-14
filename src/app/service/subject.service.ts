@@ -19,7 +19,12 @@ export class SubjectService {
     getAllSubjects(): Observable<any> {
         return this.http.get(`${this.SUBJECT_CONTROL}/all`);
     }
+
     deleteSubjectById(id): Observable<any> {
         return this.http.delete(`${this.SUBJECT_CONTROL}/id/${id}`);
+    }
+
+    getAllSubjectsByPage(page, size): Observable<any> {
+        return this.http.get(`${this.SUBJECT_CONTROL}/page/${page}/size/${size}`);
     }
 }
